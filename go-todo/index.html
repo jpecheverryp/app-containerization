@@ -1,0 +1,25 @@
+{{block "index" .}}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <h1>Golang To-Do App</h1>
+        <form method="POST" action="/new-todo">
+            <label for="new-todo">New Todo:</label>
+            <input type="text" name="new-todo" value="">
+            <button type="submit">Add</button>
+        </form>
+        <ul>
+            {{range .}}
+            <li>
+                <input type="checkbox" name="todo-{{.ID}}" {{if .Done}}checked{{end}}> {{.ID}} - {{.Text}}
+            </li>
+            {{end}}
+        </ul>
+    </body>
+</html>
+{{end}}
