@@ -53,7 +53,7 @@ func (app *application) createTodo(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	port := ":80"
+	port := ":8080"
 
 	app := &application{
 		store: []todo{
